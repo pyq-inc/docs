@@ -2,7 +2,7 @@
   "name": "pyq",
   "logo": {
     "dark": "/logo/pyq.svg",
-    "light": "/logo/pyq.svg"
+    "light": "/logo/pyq-dark.png"
   },
   "favicon": "/logo/favicon.png",
   "colors": {
