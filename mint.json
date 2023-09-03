@@ -4,6 +4,11 @@
     "dark": "/logo/pyq.svg",
     "light": "/logo/pyq-dark.png"
   },
+  "api": {
+    "playground": {
+      "mode": "simple"
+    }
+  },  
   "favicon": "/logo/favicon.png",
   "colors": {
     "primary": "#0CC79F",
@@ -43,10 +48,13 @@
     {
       "group": "Embeddings API",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "api-reference/embeddings_api/delete-get",
+        "api-reference/embeddings_api/list-documents-get",
+        "api-reference/embeddings_api/ask-get",
+        "api-reference/embeddings_api/indices-get",
+        "api-reference/embeddings_api/update-post",
+        "api-reference/embeddings_api/create-post",
+        "api-reference/embeddings_api/insert-post"
       ]
     },
     {
