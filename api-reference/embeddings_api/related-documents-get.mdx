@@ -1,0 +1,66 @@
+---
+title: Related Documents
+api: "GET https://api.mintlify.com/related-documents"
+description: "Returns documents most related to your query."
+---
+
+### Body
+
+<ParamField body="account_id" type="int">
+  This is your account ID.
+</ParamField>
+
+<ParamField body="index_name" type="string">
+  This is the name of the index you want to search for the specifed document.
+</ParamField>
+
+<ParamField body="input_sequence" type="string">
+  This is the query we use to search for related documents.
+</ParamField>
+
+<ParamField body="num_docs" type="int">
+  Number of related documents you want to receive.
+</ParamField>
+
+<ParamField header="Authorization" type="string">
+  This is your API token associated with your account.
+</ParamField>
+
+### Response
+
+<ResponseField name="success" type="number">
+  Indicates whether the call was successful. 1 if successful, 0 if not.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://api.mintlify.com/api/user' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Token <token>' \
+--data-raw '{
+    "user_group_id": "example_1",
+    "name": "Example 1",
+    "mapping": {"40": "213", "134": "386"},
+    "properties": {"filterValue": "value"}
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "success": 1,
+  "new_user_group": true,
+  "user_group": {
+    "team_id": 3,
+    "token": "<user_group_token_to_auth_dashboard>",
+    "name": "Example 1",
+    "provided_id": "example_1"
+  }
+}
+```
+
+</ResponseExample>
