@@ -1,14 +1,16 @@
 ---
 title: List Indices
-api: "GET https://api.mintlify.com/indices"
+api: "GET https://document-query.pyqai.com/indices"
 description: "This endpoint lists all indices associated with your account."
 ---
 
-### Body
+### Query Parameters
 
-<ParamField body="account_id" type="int">
+<ParamField query="account_id" type="int">
   This is your account ID.
 </ParamField>
+
+### Headers
 
 <ParamField header="Authorization" type="string">
   This is your API token associated with your account.
