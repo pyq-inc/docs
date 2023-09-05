@@ -1,6 +1,6 @@
 ---
 title: Create Index
-api: "POST https://api.mintlify.com/create"
+api: "POST https://document-query.pyqai.com/create"
 contentType: "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'"
 description: "This endpoint creates an index and uploads an initial document."
 ---
@@ -19,7 +19,7 @@ description: "This endpoint creates an index and uploads an initial document."
   This is the name of the index you wish to create.
 </ParamField>
 
-<ParamField path="account_id" type="int">
+<ParamField body="account_id" type="int">
   This is your account ID.
 </ParamField>
 
@@ -31,8 +31,8 @@ description: "This endpoint creates an index and uploads an initial document."
 
 ### Response
 
-<ResponseField name="success" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+<ResponseField name="response" type="string">
+  Indicates whether the call was successful.
 </ResponseField>
 
 <RequestExample>
@@ -40,7 +40,7 @@ description: "This endpoint creates an index and uploads an initial document."
 ```bash Example Request
 curl --location 'https://document-query.pyqai.com/create' \
 --header 'Authorization: ExampleToken' \
---form 'account_id="1"' \
+--form 'account_id="ExampleAccountId"' \
 --form 'index_name="Example New Index Name"' \
 --form 'document_source="Example 1"' \
 --form 'input_sequence=@"example_file_path.txt"'
@@ -52,14 +52,7 @@ curl --location 'https://document-query.pyqai.com/create' \
 
 ```json Response
 {
-  "success": 1,
-  "new_user_group": true,
-  "user_group": {
-    "team_id": 3,
-    "token": "<user_group_token_to_auth_dashboard>",
-    "name": "Example 1",
-    "provided_id": "example_1"
-  }
+    "response": "Successfully created index"
 }
 ```
 

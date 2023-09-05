@@ -1,22 +1,24 @@
 ---
 title: Ask Pyq AI
-api: "GET https://api.mintlify.com/ask"
+api: "GET https://document-query.pyqai.com/ask"
 description: "This endpoint answers a query using documents in an index.."
 ---
 
-### Body
+### Query Parameters
 
-<ParamField body="account_id" type="int">
+<ParamField query="account_id" type="int">
   This is your account ID.
 </ParamField>
 
-<ParamField body="index_name" type="string">
+<ParamField query="index_name" type="string">
   This is the name of the index you wish to remove the document from.
 </ParamField>
 
-<ParamField body="input_sequence" type="string">
+<ParamField query="input_sequence" type="string">
   This is the query you wish to answer using documents from the given index.
 </ParamField>
+
+### Headers
 
 <ParamField header="Authorization" type="string">
   This is your API token associated with your account.
@@ -24,22 +26,28 @@ description: "This endpoint answers a query using documents in an index.."
 
 ### Response
 
-<ResponseField name="success" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+<ResponseField name="question" type="string">
+  Your input_sequence query.
+</ResponseField>
+
+<ResponseField name="answer" type="string">
+  Pyq AI's response to your query.
+</ResponseField>
+
+<ResponseField name="sources" type="list">
+  List of sources consulted to get answer.
+</ResponseField>
+
+<ResponseField name="source_documents" type="list">
+  Most relevant sections from the sources consulted to get the answer.
 </ResponseField>
 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api.mintlify.com/api/user' \
---header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
---data-raw '{
-    "user_group_id": "example_1",
-    "name": "Example 1",
-    "mapping": {"40": "213", "134": "386"},
-    "properties": {"filterValue": "value"}
-}'
+curl --location 'https://document-query.pyqai.com/ask?account_id=ExampleAccountId&index_name=ExampleIndex&input_sequenceExampleQuery' \
+--header 'Authorization: ExampleToken' \
+--data ''
 ```
 
 </RequestExample>
@@ -48,14 +56,31 @@ curl --location --request GET 'https://api.mintlify.com/api/user' \
 
 ```json Response
 {
-  "success": 1,
-  "new_user_group": true,
-  "user_group": {
-    "team_id": 3,
-    "token": "<user_group_token_to_auth_dashboard>",
-    "name": "Example 1",
-    "provided_id": "example_1"
-  }
+    "response": {
+        "question": "Your input sequence query!",
+        "answer": "Pyq's AI has answered your query.\n",
+        "sources": "source_1, source_2, source_3",
+        "source_documents": [
+            {
+                "page_content": "Some information from your documents.",
+                "metadata": {
+                    "source": "source_1"
+                }
+            },
+            {
+                "page_content": "Some information from your documents.",
+                "metadata": {
+                    "source": "source_2"
+                }
+            },
+            {
+                "page_content": "Some information from your documents.",
+                "metadata": {
+                    "source": "source_3"
+                }
+            }
+        ]
+    }
 }
 ```
 

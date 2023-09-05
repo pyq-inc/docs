@@ -1,22 +1,24 @@
 ---
 title: Delete Document
-api: "GET https://api.mintlify.com/delete-document"
+api: "GET https://document-query.pyqai.com/delete-document"
 description: "This endpoint removes a document from an index."
 ---
 
-### Body
+### Query Parameters
 
-<ParamField body="document_source" type="string">
+<ParamField query="document_source" type="string">
   This is the name of the document you wish to delete.
 </ParamField>
 
-<ParamField body="index_name" type="string">
+<ParamField query="index_name" type="string">
   This is the name of the index you wish to remove the document from.
 </ParamField>
 
-<ParamField body="account_id" type="int">
+<ParamField query="account_id" type="int">
   This is your account ID.
 </ParamField>
+
+### Headers
 
 <ParamField header="Authorization" type="string">
   This is your API token associated with your account.
@@ -24,22 +26,16 @@ description: "This endpoint removes a document from an index."
 
 ### Response
 
-<ResponseField name="success" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+<ResponseField name="response" type="string">
+  Indicates whether the delete call was successful.
 </ResponseField>
 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api.mintlify.com/api/user' \
---header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
---data-raw '{
-    "user_group_id": "example_1",
-    "name": "Example 1",
-    "mapping": {"40": "213", "134": "386"},
-    "properties": {"filterValue": "value"}
-}'
+curl --location 'https://document-query.pyqai.com/delete-document?account_id=ExampleAccountID&index_name=ExampleIndexName&document_source=ExampleDocumentSource' \
+--header 'Authorization: ExampleToken' \
+--data ''
 ```
 
 </RequestExample>
@@ -48,14 +44,7 @@ curl --location --request GET 'https://api.mintlify.com/api/user' \
 
 ```json Response
 {
-  "success": 1,
-  "new_user_group": true,
-  "user_group": {
-    "team_id": 3,
-    "token": "<user_group_token_to_auth_dashboard>",
-    "name": "Example 1",
-    "provided_id": "example_1"
-  }
+    "response": "Successfully deleted document from index"
 }
 ```
 
