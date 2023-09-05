@@ -48,6 +48,8 @@
         "api-reference/embeddings_api/ask-get",
         "api-reference/embeddings_api/indices-get",
         "api-reference/embeddings_api/document-exists-get",
+        "api-reference/embeddings_api/index-exists-get",
+        "api-reference/embeddings_api/related-documents-get",
         "api-reference/embeddings_api/update-post",
         "api-reference/embeddings_api/create-post",
         "api-reference/embeddings_api/insert-post"
