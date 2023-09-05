@@ -1,24 +1,25 @@
 ---
 title: Update Document
 api: "POST https://document-query.pyqai.com/update"
+contentType: "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'"
 description: "This endpoint updates a document in an index."
 ---
 
 ### Form Data
 
-<ParamField path="input_sequence" type="file">
+<ParamField body="input_sequence" type="file">
   This is the document you want to update.
 </ParamField>
 
-<ParamField path="document_source" type="string">
+<ParamField body="document_source" type="string">
   This is the name of the document you wish to update.
 </ParamField>
 
-<ParamField path="index_name" type="string">
+<ParamField body="index_name" type="string">
   This is the name of the index that contains the document you wish to update.
 </ParamField>
 
-<ParamField path="account_id" type="int">
+<ParamField body="account_id" type="int">
   This is your account ID.
 </ParamField>
 

@@ -4,11 +4,6 @@
     "dark": "/logo/pyq.svg",
     "light": "/logo/pyq-dark.png"
   },
-  "api": {
-    "playground": {
-      "mode": "simple"
-    }
-  },  
   "favicon": "/logo/favicon.png",
   "colors": {
     "primary": "#0CC79F",

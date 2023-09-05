@@ -1,20 +1,21 @@
 ---
 title: Create Index
 api: "POST https://api.mintlify.com/create"
+contentType: "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'"
 description: "This endpoint creates an index and uploads an initial document."
 ---
 
 ### Form Data
 
-<ParamField path="input_sequence" type="file">
+<ParamField body="input_sequence" type="file">
   This is the initial document you want to upload to your new index. 
 </ParamField>
 
-<ParamField path="document_source" type="string">
+<ParamField body="document_source" type="string">
   This is the name of the document you wish to insert into your new index.
 </ParamField>
 
-<ParamField path="index_name" type="string">
+<ParamField body="index_name" type="string">
   This is the name of the index you wish to create.
 </ParamField>
 

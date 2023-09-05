@@ -1,24 +1,25 @@
 ---
 title: Insert Document
 api: "POST  https://document-query.pyqai.com/insert"
+contentType: "multipart/form-data"
 description: "This endpoint inserts a document into an index."
 ---
 
 ### Form Data
 
-<ParamField path="input_sequence" type="file">
+<ParamField body="input_sequence" type="file">
   This is the document you want to insert into your index.
 </ParamField>
 
-<ParamField path="document_source" type="string">
+<ParamField body="document_source" type="string">
   This is the name of the document you wish to insert.
 </ParamField>
 
-<ParamField path="index_name" type="string">
+<ParamField body="index_name" type="string">
   This is the name of the index you wish to insert the document into.
 </ParamField>
 
-<ParamField path="account_id" type="int">
+<ParamField body="account_id" type="int">
   This is your account ID.
 </ParamField>
 
