@@ -5,7 +5,7 @@ description: "This endpoint lists all document in an index."
 contentType: "application/json"
 ---
 
-### Body
+### Query Parameters
 
 <ParamField query="index_name" type="string">
   This is the name of the index you wish to remove the document from.
@@ -14,6 +14,8 @@ contentType: "application/json"
 <ParamField query="account_id" type="int">
   This is your account ID.
 </ParamField>
+
+### Headers
 
 <ParamField header="Authorization" type="string">
   This is your API token associated with your account.

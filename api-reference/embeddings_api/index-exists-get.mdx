@@ -1,18 +1,20 @@
 ---
 title: Index Exists
-api: "GET https://api.mintlify.com/index-exists"
+api: "GET https://document-query.pyqai.com/index-exists"
 description: "Checks if a given index exists in your account."
 ---
 
-### Body
+### Query Parameters
 
-<ParamField body="account_id" type="int">
+<ParamField query="account_id" type="int">
   This is your account ID.
 </ParamField>
 
-<ParamField body="index_name" type="string">
+<ParamField query="index_name" type="string">
   This is the name of the index you want to see if exists.
 </ParamField>
+
+### Headers
 
 <ParamField header="Authorization" type="string">
   This is your API token associated with your account.
@@ -20,22 +22,16 @@ description: "Checks if a given index exists in your account."
 
 ### Response
 
-<ResponseField name="success" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+<ResponseField name="response" type="string">
+  Indicates whether the index exists.
 </ResponseField>
 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api.mintlify.com/api/user' \
---header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
---data-raw '{
-    "user_group_id": "example_1",
-    "name": "Example 1",
-    "mapping": {"40": "213", "134": "386"},
-    "properties": {"filterValue": "value"}
-}'
+curl --location 'https://document-query.pyqai.com/index-exists?account_id=ExampleAccountId&index_name=ExampleIndexName' \
+--header 'Authorization: ExampleToken' \
+--data ''
 ```
 
 </RequestExample>
@@ -44,14 +40,7 @@ curl --location --request GET 'https://api.mintlify.com/api/user' \
 
 ```json Response
 {
-  "success": 1,
-  "new_user_group": true,
-  "user_group": {
-    "team_id": 3,
-    "token": "<user_group_token_to_auth_dashboard>",
-    "name": "Example 1",
-    "provided_id": "example_1"
-  }
+    "response": true
 }
 ```
 
