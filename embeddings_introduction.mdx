@@ -1,0 +1,25 @@
+---
+title: 'Concepts'
+---
+
+The pyq Document Embeddings API allows you to answer questions using AI about your own documents. 
+
+This can be used to answer commonly asked questions about your documentation, to help parse through call transcripts, answer questions about large pdfs that are difficult to parse, and more.
+
+### Documents
+
+Documents are txt, md, or pdf files that contain information you want to use to answer various queries. They can be [uploaded](api-reference/embeddings_api/upload-post), and [updated](api-reference/embeddings_api/update-post)
+
+### Indexes
+
+Documents are grouped by index.  You can create an index [here](api-reference/embeddings_api/create-post) - this will upload your first document, and create an index containing that document.  You can then answer queries in that index, which will be answered by AI consulting your uploaded documents.  
+
+Additional documents can be [uploaded](api-reference/embeddings_api/upload-post), and existing documents can be [updated](api-reference/embeddings_api/update-post)
+
+### Queries
+
+Once you have uploaded some documents, you can begin to query them using the [ask](api-reference/embeddings_api/ask-get) API.  This will then use AI to answer your query using the information in the documents uploaded to that index.  Note that it will only use documents in this index, and not documents uploaded to other indices.
+
+### Tips
+
+Organizing your indices can make a significant difference in the performance of our AI.  For example, if you are answering a query about a specific user, and you have documents for many users, it makes sense to have one index per user, and to run queries on a per-user basis.  If you are struggling to get good query answers out of our API,  feel free to [Contact us](mailto:founders@pyqai.com) or book a call [here](https://calendly.com/aman-pyq/30min) and we'll happily suggest some indexing stategies.! 

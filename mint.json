@@ -4,6 +4,11 @@
     "dark": "/logo/pyq.svg",
     "light": "/logo/pyq-dark.png"
   },
+  "api": {
+    "playground": {
+      "mode": "simple"
+    }
+  },  
   "favicon": "/logo/favicon.png",
   "colors": {
     "primary": "#0CC79F",
@@ -26,23 +31,12 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "explore"]
-    },
-    {
-      "group": "Readymade Solutions",
-      "pages": [
-        "Text Tagger",
-        "Website Summarizer",
-        "Company Lister",
-        "Text Extraction", 
-        "Text Embeddings",
-        "Content Flagger",
-        "ChatGPT Detector"
-      ]
+      "pages": ["introduction", "explore"]
     },
     {
       "group": "Embeddings API",
       "pages": [
+        "embeddings_introduction",
         "api-reference/embeddings_api/delete-get",
         "api-reference/embeddings_api/list-documents-get",
         "api-reference/embeddings_api/ask-get",
@@ -58,22 +52,16 @@
     {
       "group": "Training API",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "training"
       ]
     },
     {
       "group": "Inference API",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "inference"
       ]
     }
-  ],
+],
   "footerSocials": {
     "twitter": "https://twitter.com/mintlify",
     "github": "https://github.com/mintlify",
