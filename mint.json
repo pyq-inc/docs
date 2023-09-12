@@ -31,7 +31,7 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "explore"]
+      "pages": ["explore"]
     },
     {
       "group": "Embeddings API",
