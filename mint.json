@@ -34,19 +34,19 @@
       "pages": ["explore"]
     },
     {
-      "group": "Embeddings API",
+      "group": "Document Q&A API",
       "pages": [
-        "embeddings_introduction",
-        "api-reference/embeddings_api/delete-get",
-        "api-reference/embeddings_api/list-documents-get",
-        "api-reference/embeddings_api/ask-get",
-        "api-reference/embeddings_api/indices-get",
-        "api-reference/embeddings_api/document-exists-get",
-        "api-reference/embeddings_api/index-exists-get",
-        "api-reference/embeddings_api/related-documents-get",
-        "api-reference/embeddings_api/update-post",
-        "api-reference/embeddings_api/create-post",
-        "api-reference/embeddings_api/insert-post"
+        "documentqanda_introduction",
+        "api-reference/documentqanda_api/delete-get",
+        "api-reference/documentqanda_api/list-documents-get",
+        "api-reference/documentqanda_api/ask-get",
+        "api-reference/documentqanda_api/indices-get",
+        "api-reference/documentqanda_api/document-exists-get",
+        "api-reference/documentqanda_api/index-exists-get",
+        "api-reference/documentqanda_api/related-documents-get",
+        "api-reference/documentqanda_api/update-post",
+        "api-reference/documentqanda_api/create-post",
+        "api-reference/documentqanda_api/insert-post"
       ]
     },
     {
