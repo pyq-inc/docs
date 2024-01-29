@@ -40,6 +40,7 @@
         "api-reference/documentqanda_api/delete-get",
         "api-reference/documentqanda_api/list-documents-get",
         "api-reference/documentqanda_api/ask-get",
+        "api-reference/documentqanda_api/ask-formatted-get",
         "api-reference/documentqanda_api/indices-get",
         "api-reference/documentqanda_api/document-exists-get",
         "api-reference/documentqanda_api/index-exists-get",
