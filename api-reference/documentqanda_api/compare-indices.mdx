@@ -1,5 +1,5 @@
 ---
-title: Ask Pyq AI
+title: Compare Indices with Pyq AI
 api: "GET https://document-query.pyqai.com/compare-indices"
 description: "This endpoint answers comparative questions using 2 indexes."
 ---
@@ -45,7 +45,7 @@ description: "This endpoint answers comparative questions using 2 indexes."
 <RequestExample>
 
 ```bash Example Request
-curl --location 'https://document-query.pyqai.com/compare-documents?account_id=ExampleAccountId&index_name=ExampleIndex&document_1=Document1&document_2=Document2&input_sequence=Which source document contains more location information?' \
+curl --location 'https://document-query.pyqai.com/compare-indices?account_id=ExampleAccountId&index_name_1=ExampleInde1x&index_name_2=ExampleIndex2input_sequence=Which index contains more location information?' \
 --header 'Authorization: ExampleToken' \
 --data ''
 ```

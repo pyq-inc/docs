@@ -47,7 +47,9 @@
         "api-reference/documentqanda_api/related-documents-get",
         "api-reference/documentqanda_api/update-post",
         "api-reference/documentqanda_api/create-post",
-        "api-reference/documentqanda_api/insert-post"
+        "api-reference/documentqanda_api/insert-post",
+        "api-reference/documentqanda_api/compare-documents",
+        "api-reference/documentqanda_api/compare-indices"
       ]
     },
     {
