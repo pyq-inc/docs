@@ -6,17 +6,17 @@ description: "Checks if a given index exists in your account."
 
 ### Query Parameters
 
-<ParamField query="account_id" type="int">
+<ParamField query="account_id" type="int" required>
   This is your account ID.
 </ParamField>
 
 <ParamField query="index_name" type="string">
-  This is the name of the index you want to see if exists.
+  This is the name of the index you want to see if exists. This parameter is optional - if left blank will use auto indexing.
 </ParamField>
 
 ### Headers
 
-<ParamField header="Authorization" type="string">
+<ParamField header="Authorization" type="string" required>
   This is your API token associated with your account.
 </ParamField>
 

@@ -6,25 +6,25 @@ description: "This endpoint answers comparative questions using 2 indexes."
 
 ### Body Parameters
 
-<ParamField body="account_id" type="int">
+<ParamField body="account_id" type="int" required>
   This is your account ID.
 </ParamField>
 
-<ParamField body="input_sequence" type="string">
+<ParamField body="input_sequence" type="string" required>
   This is the query you wish to answer using documents from the given index.
 </ParamField>
 
-<ParamField body="index_name_1" type="string">
+<ParamField body="index_name_1" type="string" required>
   This is the first index you want to consider.
 </ParamField>
 
-<ParamField body="index_name_2" type="string">
+<ParamField body="index_name_2" type="string" required>
   This is the second index you want to consider.
 </ParamField>
 
 ### Headers
 
-<ParamField header="Authorization" type="string">
+<ParamField header="Authorization" type="string" required>
   This is your API token associated with your account.
 </ParamField>
 

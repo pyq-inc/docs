@@ -7,25 +7,25 @@ description: "This endpoint creates an index and uploads an initial document."
 
 ### Form Data
 
-<ParamField body="input_sequence" type="file">
+<ParamField body="input_sequence" type="file" required>
   This is the initial document you want to upload to your new index. Currently supported file types are md, pdf, and txt.
 </ParamField>
 
-<ParamField body="document_source" type="string">
+<ParamField body="document_source" type="string" required>
   This is the name of the document you wish to insert into your new index.
 </ParamField>
 
 <ParamField body="index_name" type="string">
-  This is the name of the index you wish to create.
+  This is the name of the index you wish to create. This parameter is optional - if left blank will use auto indexing.
 </ParamField>
 
-<ParamField body="account_id" type="int">
+<ParamField body="account_id" type="int" required>
   This is your account ID.
 </ParamField>
 
 ### Headers
 
-<ParamField header="Authorization" type="string">
+<ParamField header="Authorization" type="string" required>
   This is your API token associated with your account.
 </ParamField>
 

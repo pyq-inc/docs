@@ -6,21 +6,21 @@ description: "Checks if a given document exists in your index."
 
 ### Query Parameters
 
-<ParamField query="account_id" type="int">
+<ParamField query="account_id" type="int" required>
   This is your account ID.
 </ParamField>
 
 <ParamField query="index_name" type="string">
-  This is the name of the index you want to search for the specifed document.
+  This is the name of the index you want to search for the specifed document. This parameter is optional - if left blank will use auto indexing.
 </ParamField>
 
-<ParamField query="document_source" type="string">
+<ParamField query="document_source" type="string" required>
   This is the name of the documeht you want to see if exists.
 </ParamField>
 
 ### Headers
 
-<ParamField header="Authorization" type="string">
+<ParamField header="Authorization" type="string" required>
   This is your API token associated with your account.
 </ParamField>
 

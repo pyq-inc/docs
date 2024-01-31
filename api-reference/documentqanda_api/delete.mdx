@@ -6,21 +6,21 @@ description: "This endpoint removes a document from an index."
 
 ### Query Parameters
 
-<ParamField query="document_source" type="string">
+<ParamField query="document_source" type="string" required>
   This is the name of the document you wish to delete.
 </ParamField>
 
 <ParamField query="index_name" type="string">
-  This is the name of the index you wish to remove the document from.
+  This is the name of the index you wish to remove the document from. This parameter is optional - if left blank will use auto indexing.
 </ParamField>
 
-<ParamField query="account_id" type="int">
+<ParamField query="account_id" type="int" required>
   This is your account ID.
 </ParamField>
 
 ### Headers
 
-<ParamField header="Authorization" type="string">
+<ParamField header="Authorization" type="string" required>
   This is your API token associated with your account.
 </ParamField>
 
