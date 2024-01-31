@@ -1,0 +1,50 @@
+---
+title: LORA Adapter Inference
+api: "GET https://model-adapter-swapping.pyqai.com/predict"
+description: "This endpoint runs inference on your choice of adapter."
+---
+
+### Query Parameters
+
+<ParamField query="account_id" type="int">
+  This is your account ID.
+</ParamField>
+
+<ParamField query="input" type="string">
+  This is the input for your specified adapter.
+</ParamField>
+
+<ParamField query="adapter_name" type="string">
+  This is the  name of the adapter you want to run inference on.
+</ParamField>
+
+### Headers
+
+<ParamField header="Authorization" type="string">
+  This is your API token associated with your account.
+</ParamField>
+
+### Response
+
+<ResponseField name="response" type="json">
+  The output of your adapter.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://model-adapter-swapping.pyqai.com/predict?account_id=3&input=sample_input&adapter_name=AdapterName' \
+--header 'Authorization: ExampleToken' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+    "response": {"Sample model response."}
+}
+```
+
+</ResponseExample>

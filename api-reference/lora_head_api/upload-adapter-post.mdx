@@ -1,0 +1,54 @@
+---
+title: Create Index
+api: "POST https://model-adapter-swapping.pyqai.com/upload-adapter"
+contentType: "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'"
+description: "This endpoint creates an index and uploads an initial document."
+---
+
+### Form Data
+
+<ParamField body="adapter" type="file">
+  This is the Mistral LORA adapter you wish to upload, zipped. This should include all adapter contents.
+</ParamField>
+
+<ParamField body="adapter_name" type="string">
+  This is the name of the adapter you wish to upload - this will be how you load this adapter to run inference.
+</ParamField>
+
+<ParamField body="account_id" type="int">
+  This is your account ID.
+</ParamField>
+
+### Headers
+
+<ParamField header="Authorization" type="string">
+  This is your API token associated with your account.
+</ParamField>
+
+### Response
+
+<ResponseField name="response" type="string">
+  Indicates whether the upload was successful.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://model-adapter-swapping.pyqai.com/upload-adapter' \
+--header 'Authorization: ExampleToken' \
+--form 'account_id="ExampleAccountId"' \
+--form 'adapter_name="ExampleAdapterName"' \
+--form 'adapter=@"example_file_path.zip"'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+    "response": "Successfully uploaded adapter."
+}
+```
+
+</ResponseExample>
