@@ -1,32 +1,32 @@
 ---
 title: Ask Pyq AI with Formatted Output
-api: "GET https://document-query.pyqai.com/ask-formatted"
+api: "POST https://document-query.pyqai.com/ask-formatted"
 description: "This endpoint answers a query using documents in an index, and gives the output in a user-specified format."
 ---
 
-### Query Parameters
+### Body Parameters
 
-<ParamField query="account_id" type="int">
+<ParamField body="account_id" type="int">
   This is your account ID.
 </ParamField>
 
-<ParamField query="index_name" type="string">
+<ParamField body="index_name" type="string">
   This is the name of the index you wish to query with.
 </ParamField>
 
-<ParamField query="input_sequence" type="string">
+<ParamField body="input_sequence" type="string">
   This is the query you wish to answer using documents from the given index.
 </ParamField>
 
-<ParamField query="response_type" type="string">
+<ParamField body="response_type" type="string">
   This is the type you would like your answer to be in. str, int, float, bool, list[str], list[bool], list[int], list[float] are supported.  
 </ParamField>
 
-<ParamField query="name" type="string">
+<ParamField body="name" type="string">
   This is the name of the JSON field you wish to be populated.
 </ParamField>
 
-<ParamField query="description" type="string">
+<ParamField body="description" type="string">
   This is a description of the field that will be populated.  This helps the AI extract the correct information and make sure it is in the correct type.
 </ParamField>
 
@@ -49,8 +49,10 @@ description: "This endpoint answers a query using documents in an index, and giv
 <RequestExample>
 
 ```bash Example Request
-curl --location 'https://document-query.pyqai.com/ask-formatted?account_id=ExampleAccountId&index_name=ExampleIndex&input_sequence=ExampleQuery&description=Description of the output you want&response_type=list[str]&name=str_list_output'\
---header 'Authorization: ExampleToken'
+curl --location 'https://document-query.pyqai.com/ask-formatted' \
+--header 'Authorization: ExampleAPIToken' \
+--header 'Content-Type: application/json' \
+--data '{"account_id" : ExampleAccountID, "index_name" : "ExampleIndexName", "input_sequence" : "Example query", "description" : "Description of field to populate", "response_type" : "list[str]", "name" : "list of query results"}'
 ```
 
 </RequestExample>

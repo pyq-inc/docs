@@ -1,28 +1,28 @@
 ---
 title: Compare Documents with Pyq AI
-api: "GET https://document-query.pyqai.com/compare-documents"
+api: "POST https://document-query.pyqai.com/compare-documents"
 description: "This endpoint answers comparative questions using 2 documents in the same index."
 ---
 
-### Query Parameters
+### Body Parameters
 
 <ParamField query="account_id" type="int">
   This is your account ID.
 </ParamField>
 
-<ParamField query="index_name" type="string">
+<ParamField body="index_name" type="string">
   This is the name of the index you wish to query with.
 </ParamField>
 
-<ParamField query="input_sequence" type="string">
+<ParamField body="input_sequence" type="string">
   This is the query you wish to answer using documents from the given index.
 </ParamField>
 
-<ParamField query="document_1" type="string">
+<ParamField body="document_1" type="string">
   This is the first document you want to consider.
 </ParamField>
 
-<ParamField query="document_2" type="string">
+<ParamField body="document_2" type="string">
   This is the second document you want to consider.
 </ParamField>
 
@@ -49,9 +49,10 @@ description: "This endpoint answers comparative questions using 2 documents in t
 <RequestExample>
 
 ```bash Example Request
-curl --location 'https://document-query.pyqai.com/compare-documents?account_id=ExampleAccountId&index_name=ExampleIndex&document_1=Document1&document_2=Document2&input_sequence=Which source document contains more location information?' \
---header 'Authorization: ExampleToken' \
---data ''
+curl --location 'https://document-query.pyqai.com/compare-documents' \
+--header 'Authorization: ExampleAPIToken' \
+--header 'Content-Type: application/json' \
+--data '{"account_id" : ExampleAccountID, "index_name" : "ExampleIndexName", "document_1" : "ExampleDocument1", "document_2" : "ExampleDocument2", "input_sequence" : "Example comparative query"}'
 ```
 
 </RequestExample>
