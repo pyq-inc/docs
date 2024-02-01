@@ -22,6 +22,10 @@ description: "This endpoint answers comparative questions using 2 indexes."
   This is the second index you want to consider.
 </ParamField>
 
+<ParamField body="model" type="string">
+  This is an optional parameter specifying if you would like to use Anthropic's Claude instead of our default. The value "claude" will result in using that for your query.
+</ParamField>
+
 ### Headers
 
 <ParamField header="Authorization" type="string" required>
