@@ -15,12 +15,20 @@ description: "This endpoint creates an index and uploads an initial document."
   This is the name of the document you wish to insert into your new index.
 </ParamField>
 
+<ParamField body="account_id" type="int" required>
+  This is your account ID.
+</ParamField>
+
 <ParamField body="index_name" type="string">
   This is the name of the index you wish to create. This parameter is optional - if left blank will use auto indexing.
 </ParamField>
 
-<ParamField body="account_id" type="int" required>
-  This is your account ID.
+<ParamField body="embeddings_model" type="string">
+  This is an optional parameter, allowing you to specify the name of the embeddings model you'd like to use.  "mpnet" is the default model and value, "instructor" will use the Instructor XL embedding model instead.
+</ParamField>
+
+<ParamField body="instruction" type="string">
+  This is an optional parameter that is required when using "instructor" as your embedding model. This will be used as the instruction with with to embed your documents.
 </ParamField>
 
 ### Headers
