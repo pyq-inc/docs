@@ -53,15 +53,9 @@
       ]
     },
     {
-      "group": "Training API",
+      "group": "Extract",
       "pages": [
-        "training"
-      ]
-    },
-    {
-      "group": "Inference API",
-      "pages": [
-        "inference"
+        "api-reference/extract/parse"
       ]
     }
 ],
