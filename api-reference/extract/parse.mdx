@@ -1,0 +1,49 @@
+---
+title: Parse Document
+api: "POST  https://document-query.pyqai.com/insert"
+contentType: "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'"
+description: "This endpoint parses a PDF using a template you created within Extract."
+---
+
+### Form Data
+
+<ParamField body="document" type="file" required>
+  This is the document you want to parse.  We currently only support PDFs.
+</ParamField>
+
+<ParamField body="template" type="string" required>
+  This is the name of the template you wish to apply to the document. Create templates at https://extract.pyqai.com/templates.
+</ParamField>
+
+### Headers
+
+<ParamField header="Authorization" type="string" required>
+  This is your API token associated with your account.
+</ParamField>
+
+### Response
+
+<ResponseField name="response" type="string">
+  The output of your extraction.
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://document-query.pyqai.com/insert' \
+--header 'Authorization: ExampleToken' \
+--form 'template="Example1"' \
+--form 'document=@"example_file_path.txt"'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+    "response": {"field1": "Example value","field2": "Another example value}
+}
+```
+
+</ResponseExample>
